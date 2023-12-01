@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://prg5rgqgcp5t"]
+
+[ext_resource type="Script" path="res://player_2.gd" id="1_5ebg0"]
+[ext_resource type="Texture2D" uid="uid://cb23yun46wy2m" path="res://Assets/spaceships.png" id="2_rr03t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxijr"]
+atlas = ExtResource("2_rr03t")
+region = Rect2(69, 3, 21, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ohlm"]
+size = Vector2(20, 30)
+
+[node name="Player2" type="CharacterBody2D"]
+position = Vector2(-935, 935)
+motion_mode = 1
+script = ExtResource("1_5ebg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_hxijr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ohlm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = -1024
+limit_top = -1024
+limit_right = 1024
+limit_bottom = 1024
