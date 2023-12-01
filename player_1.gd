@@ -14,8 +14,6 @@ func _ready():
 	sprite = get_node("Sprite2D")
 	posX = 1024 - (sprite.texture.get_width() + 1) / 2 - 1
 	posY = 1024 - (sprite.texture.get_height() + 1) / 2 - 1
-	print("width : ", sprite.texture.get_width())
-	print("height : ", sprite.texture.get_height())
 
 func _physics_process(delta):
 	var directionX = Input.get_axis("MoveLeftP1", "MoveRightP1")
