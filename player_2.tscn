@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://prg5rgqgcp5t"]
+[gd_scene load_steps=7 format=3 uid="uid://prg5rgqgcp5t"]
 
 [ext_resource type="Script" path="res://player_2.gd" id="1_5ebg0"]
 [ext_resource type="Texture2D" uid="uid://cb23yun46wy2m" path="res://Assets/spaceships.png" id="2_rr03t"]
+[ext_resource type="Texture2D" uid="uid://c3kbf73cq4dca" path="res://Assets/Target.png" id="3_tna8b"]
+[ext_resource type="Script" path="res://Target2.gd" id="4_0t5fo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxijr"]
 atlas = ExtResource("2_rr03t")
@@ -21,3 +23,9 @@ texture = SubResource("AtlasTexture_hxijr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ohlm")
+
+[node name="Target" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_tna8b")
+script = ExtResource("4_0t5fo")

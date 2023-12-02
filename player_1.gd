@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 750.0
+const SPEED = 50000.0
 var sprite:Sprite2D
 var posX = 0
 var posY = 0
@@ -27,5 +27,5 @@ func _physics_process(_delta):
 		rotate(rotations)
 	
 	Moving = Vector2(directionX, directionY).normalized()
-	velocity = Moving * SPEED
+	velocity = Moving * SPEED * _delta
 	move_and_slide()
