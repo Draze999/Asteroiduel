@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+const bullet = preload("res://bullet.tscn")
 const SPEED = 50000.0
 var sprite:Sprite2D
 var posX = 0
@@ -38,6 +38,17 @@ func _ready():
 	posX = 1024 - (sprite.texture.get_width() + 1) / 2 - 1
 	posY = 1024 - (sprite.texture.get_height() + 1) / 2 - 1
 
+func spawn_bullet(delta):
+	var curr_b = bullet.instantiate()
+	get_parent().add_child(curr_b)
+	curr_b.position = position
+	curr_b.initi(Vector2.from_angle(rotation - PI / 2), delta)
+	curr_b.rotate(rotation - PI / 2)
+
+func _shoot(_delta):
+	if Input.is_action_just_pressed("ShootP2"):
+		spawn_bullet(_delta)
+
 func _physics_process(delta):
 	var directionX = Input.get_axis("MoveLeftP2", "MoveRightP2")
 	var directionY = Input.get_axis("MoveUpP2", "MoveDownP2")
@@ -49,5 +60,6 @@ func _physics_process(delta):
 	
 	Moving = Vector2(directionX, directionY).normalized()
 	velocity = (Moving + DashDirection) * SPEED * delta
+	_shoot(delta)
 	_dash(delta, Vector2(directionX, directionY))
 	move_and_slide()
