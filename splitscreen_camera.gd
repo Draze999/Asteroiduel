@@ -1,18 +1,30 @@
-extends GridContainer
+extends Node
 
-var view1 :Camera2D
-var view2 :Camera2D
-var cam1 :Camera2D
-var cam2 :Camera2D
+@onready var players := {
+	"1": {
+		view = $"HBoxContainer/SubViewPortP1/SubViewport",
+		cam = $"HBoxContainer/SubViewPortP1/SubViewport/Camera2D",
+		player = $"HBoxContainer/SubViewPortP1/SubViewport/Level/Player1"
+	}, 
+	"2": {
+		view = $"HBoxContainer/SubViewPortP2/SubViewport",
+		cam = $"HBoxContainer/SubViewPortP2/SubViewport/Camera2D",
+		player = $"HBoxContainer/SubViewPortP1/SubViewport/Level/Player2",
+	}, 
+}
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	view1 = get_node("SubViewPortP1/SubViewport/Camera2D")
-	view2 = get_node("SubViewPortP2/SubViewport/Camera2D")
-	cam1 = get_node("../../Player1/Camera2D")
-	cam2 = get_node("../../Player2/Camera2D")
+func _ready() -> void:
+	
+	players["2"].view.get_viewport().world_2d = players["1"].cam.get_viewport().world_2d
+	for i in players.values() :
+		var remote_trans := RemoteTransform2D.new()
+		remote_trans.remote_path = i.cam.get_path()
+		i.player.add_child(remote_trans)
+		
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

@@ -15,7 +15,7 @@ func _ready():
 	posX = 1024 - (sprite.texture.get_width() + 1) / 2 - 1
 	posY = 1024 - (sprite.texture.get_height() + 1) / 2 - 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var directionX = Input.get_axis("MoveLeftP1", "MoveRightP1")
 	var directionY = Input.get_axis("MoveUpP1", "MoveDownP1")
 	Moving = Vector2(directionX, directionY).normalized()

@@ -11,7 +11,7 @@ region = Rect2(69, 3, 21, 31)
 size = Vector2(20, 30)
 
 [node name="Player2" type="CharacterBody2D"]
-position = Vector2(-935, 935)
+position = Vector2(935, 935)
 motion_mode = 1
 script = ExtResource("1_5ebg0")
 
@@ -21,11 +21,3 @@ texture = SubResource("AtlasTexture_hxijr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ohlm")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
-zoom = Vector2(2, 2)
-limit_left = -1024
-limit_top = -1024
-limit_right = 1024
-limit_bottom = 1024

@@ -21,10 +21,3 @@ texture = SubResource("AtlasTexture_hxijr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ohlm")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_left = -1024
-limit_top = -1024
-limit_right = 1024
-limit_bottom = 1024
