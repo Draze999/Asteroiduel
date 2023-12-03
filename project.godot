@@ -135,6 +135,11 @@ DashP2={
 2d_render/layer_1="Maps"
 2d_physics/layer_1="Map"
 2d_navigation/layer_1="Maps"
+2d_physics/layer_2="Player1"
+2d_physics/layer_3="Player2"
+2d_physics/layer_4="Bullet1"
+2d_physics/layer_5="Bullet2"
+2d_physics/layer_6="Planets"
 
 [physics]
 

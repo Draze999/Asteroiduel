@@ -14,6 +14,8 @@ size = Vector2(20, 30)
 
 [node name="Player2" type="CharacterBody2D"]
 position = Vector2(935, 935)
+collision_layer = 4
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_5ebg0")
 
@@ -25,7 +27,7 @@ texture = SubResource("AtlasTexture_hxijr")
 shape = SubResource("RectangleShape2D_2ohlm")
 
 [node name="Target" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.945098, 0.027451, 0, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_tna8b")
 script = ExtResource("4_0t5fo")

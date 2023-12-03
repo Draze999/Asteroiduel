@@ -9,10 +9,14 @@ var HP1 = load("res://Assets/life1.png")
 
 var DashOn = load("res://Assets/DashButton.png") 
 var DashOff = load("res://Assets/DashButtonOff.png") 
+var ShootOn = load("res://Assets/Ammo.png") 
+var ShootOff = load("res://Assets/AmmoOff.png") 
 
 @onready var Player = get_node("../../HBoxContainer/SubViewPortP1/SubViewport/Level/Player2")
 
 @onready var ButtonDash = get_node("../CanDash2")
+@onready var ButtonShoot = get_node("../CanShoot2")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -34,3 +38,7 @@ func _process(_delta):
 		ButtonDash.texture = DashOn
 	else:
 		ButtonDash.texture = DashOff
+	if (Player.canShoot == true):
+		ButtonShoot.texture = ShootOn
+	else:
+		ButtonShoot.texture = ShootOff
