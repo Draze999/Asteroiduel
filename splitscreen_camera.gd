@@ -27,4 +27,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if (players["1"].player.Health <= 0):
+		print("P1 Lost")
+	if (players["2"].player.Health <= 0):
+		print("P2 Lost")
 	pass
