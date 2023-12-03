@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://irf4d8pcd8d7"]
+[gd_scene load_steps=8 format=3 uid="uid://irf4d8pcd8d7"]
 
 [ext_resource type="Script" path="res://splitscreen_camera.gd" id="1_4tdqd"]
 [ext_resource type="PackedScene" uid="uid://ms7xv8ojs3rf" path="res://Main.tscn" id="2_etl6b"]
@@ -7,8 +7,6 @@
 [ext_resource type="Script" path="res://HpBar2.gd" id="5_v4tjm"]
 [ext_resource type="Texture2D" uid="uid://b2s63ry5uqgo" path="res://Assets/DashButton.png" id="6_n1kwn"]
 [ext_resource type="Texture2D" uid="uid://dqd0dsnneo77r" path="res://Assets/Ammo.png" id="7_fmgas"]
-[ext_resource type="Texture2D" uid="uid://dhnfkf6hst6mq" path="res://Assets/GameOverRed.png" id="8_wjknl"]
-[ext_resource type="Texture2D" uid="uid://c5l16bb7vguu2" path="res://Assets/GameOverGreen.png" id="9_eoxns"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_4tdqd")
@@ -105,16 +103,4 @@ texture_filter = 1
 position = Vector2(1734, 967)
 scale = Vector2(3, 3)
 texture = ExtResource("7_fmgas")
-centered = false
-
-[node name="GOP1" type="Sprite2D" parent="HUD"]
-modulate = Color(1, 1, 1, 0)
-z_index = 4096
-texture = ExtResource("8_wjknl")
-centered = false
-
-[node name="GOP2" type="Sprite2D" parent="HUD"]
-modulate = Color(1, 1, 1, 0)
-z_index = 4096
-texture = ExtResource("9_eoxns")
 centered = false
