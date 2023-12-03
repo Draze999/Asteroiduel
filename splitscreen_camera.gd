@@ -1,5 +1,8 @@
 extends Node
 
+@onready var GO1 = get_node("HUD/GOP1") 
+@onready var GO2 = get_node("HUD/GOP2") 
+
 @onready var players := {
 	"1": {
 		view = $"HBoxContainer/SubViewPortP1/SubViewport",
@@ -28,7 +31,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if (players["1"].player.Health <= 0):
-		print("P1 Lost")
+		GO2.modulate.a = 1
 	if (players["2"].player.Health <= 0):
-		print("P2 Lost")
+		GO1.modulate.a = 1
 	pass
