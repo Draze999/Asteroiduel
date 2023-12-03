@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3v8occtflcc7"]
+[gd_scene load_steps=9 format=3 uid="uid://d3v8occtflcc7"]
 
 [ext_resource type="Texture2D" uid="uid://bo3b4katd7m5f" path="res://Assets/bullet.png" id="1_qjpss"]
 [ext_resource type="Script" path="res://bullet.gd" id="1_qviq5"]
-[ext_resource type="Texture2D" uid="uid://sjlban2qdfks" path="res://Assets/bulletgreen.png" id="2_gmpq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wx3b"]
-atlas = ExtResource("2_gmpq3")
-region = Rect2(418, 5, 12, 7)
+atlas = ExtResource("1_qjpss")
+region = Rect2(132, 34, 12, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6w4j"]
 atlas = ExtResource("1_qjpss")
@@ -38,11 +37,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsj24"]
-size = Vector2(12, 7)
+size = Vector2(12, 11)
 
 [node name="RigidBody2D" type="RigidBody2D"]
-collision_layer = 8
-collision_mask = 4
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_qviq5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -50,10 +49,9 @@ texture_filter = 1
 texture = SubResource("AtlasTexture_6wx3b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_ekc3d")
 animation = &"bullet"
 frame_progress = 0.711263
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="bullet_colision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qsj24")
