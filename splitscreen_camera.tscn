@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b2s63ry5uqgo" path="res://Assets/DashButton.png" id="6_n1kwn"]
 [ext_resource type="Texture2D" uid="uid://dqd0dsnneo77r" path="res://Assets/Ammo.png" id="7_fmgas"]
 [ext_resource type="Texture2D" uid="uid://dhnfkf6hst6mq" path="res://Assets/GameOverRed.png" id="8_wjknl"]
-[ext_resource type="Texture2D" path="res://Assets/GameOverGreen.png" id="9_eoxns"]
+[ext_resource type="Texture2D" uid="uid://c5l16bb7vguu2" path="res://Assets/GameOverGreen.png" id="9_eoxns"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_4tdqd")
