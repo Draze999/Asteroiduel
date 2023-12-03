@@ -1,41 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3v8occtflcc7"]
+[gd_scene load_steps=5 format=3 uid="uid://d3v8occtflcc7"]
 
-[ext_resource type="Texture2D" uid="uid://bo3b4katd7m5f" path="res://Assets/bullet.png" id="1_qjpss"]
 [ext_resource type="Script" path="res://bullet.gd" id="1_qviq5"]
 [ext_resource type="Texture2D" uid="uid://sjlban2qdfks" path="res://Assets/bulletgreen.png" id="2_gmpq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wx3b"]
 atlas = ExtResource("2_gmpq3")
 region = Rect2(418, 5, 12, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f6w4j"]
-atlas = ExtResource("1_qjpss")
-region = Rect2(112, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3d8qu"]
-atlas = ExtResource("1_qjpss")
-region = Rect2(128, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_374xs"]
-atlas = ExtResource("1_qjpss")
-region = Rect2(128, 32, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ekc3d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f6w4j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3d8qu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_374xs")
-}],
-"loop": true,
-"name": &"bullet",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsj24"]
 size = Vector2(12, 7)
@@ -47,13 +17,9 @@ script = ExtResource("1_qviq5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_6wx3b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_ekc3d")
-animation = &"bullet"
-frame_progress = 0.711263
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_qsj24")

@@ -26,7 +26,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewPortP1"]
 handle_input_locally = false
-size = Vector2i(958, 1080)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Level" parent="HBoxContainer/SubViewPortP1/SubViewport" instance=ExtResource("2_etl6b")]
@@ -46,7 +46,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewPortP2"]
 handle_input_locally = false
-size = Vector2i(958, 1080)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewPortP2/SubViewport"]

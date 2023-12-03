@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const bullet = preload("res://bullet.tscn")
-const SPEED = 50000.0
+const SPEED = 30000.0
 var sprite:Sprite2D
 var posX = 0
 var posY = 0

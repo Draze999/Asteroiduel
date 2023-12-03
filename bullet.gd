@@ -1,10 +1,13 @@
 extends RigidBody2D
 
-const speed = 75000.0
+const speed = 60000.0
 var timer = 3
 var ownerplayer:int
 var Bullet = load("res://Assets/bullet.png") 
 @onready var bulletnode = get_node("./Sprite2D")
+var current_frame = false
+var MaxframeTime = 0.05
+var frameTime = MaxframeTime
 
 func initi(dir:Vector2, delta, player):
 	linear_velocity = speed * dir * delta
@@ -21,6 +24,11 @@ func initi(dir:Vector2, delta, player):
 		bulletnode.texture = (newTexture)
 
 func _process(delta):
+	frameTime -= delta
+	if (frameTime <= 0):
+		bulletnode.flip_v = (!current_frame)
+		current_frame = !current_frame
+		frameTime = MaxframeTime
 	if (timer <= 0):
 		queue_free()
 	if (abs(linear_velocity.x) + abs(linear_velocity.y) < 25):
